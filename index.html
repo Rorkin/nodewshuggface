@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ocean Guardians - 守护蔚蓝</title>
+    <title>Ocean Guardian - Protect Our Seas</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -14,15 +14,14 @@
         }
 
         :root {
-            /* 海洋主题配色 */
-            --primary: #0277bd;   /* 深海蓝 */
-            --secondary: #00acc1; /* 青蓝色 */
-            --accent: #4dd0e1;    /* 浅青色高光 */
-            --light: #e1f5fe;     /* 极浅蓝背景 */
-            --dark: #004c8c;      /* 深海军蓝 */
-            --text: #37474f;      /* 深灰蓝文字 */
+            --primary: #0077b6;
+            --secondary: #00b4d8;
+            --accent: #48cae4;
+            --light: #caf0f8;
+            --dark: #03045e;
+            --text: #333333;
             --white: #ffffff;
-            --coral: #ff7043;     /* 珊瑚色作为点缀按钮 */
+            --sand: #f4e8c1;
         }
 
         body {
@@ -32,13 +31,13 @@
         }
 
         header {
-            background: linear-gradient(to right, var(--dark), var(--primary));
+            background: linear-gradient(to right, var(--primary), var(--secondary));
             color: var(--white);
             padding: 1rem 0;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
         .container {
@@ -59,12 +58,10 @@
             gap: 10px;
             font-size: 1.8rem;
             font-weight: 700;
-            letter-spacing: 1px;
         }
 
         .logo i {
             font-size: 2rem;
-            color: var(--accent);
         }
 
         nav ul {
@@ -86,7 +83,7 @@
         }
 
         nav ul li a:hover {
-            color: var(--accent);
+            color: var(--sand);
         }
 
         nav ul li a::after {
@@ -96,7 +93,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background-color: var(--accent);
+            background-color: var(--sand);
             transition: width 0.3s ease;
         }
 
@@ -105,11 +102,10 @@
         }
 
         .hero {
-            /* 替换为海洋背景图 */
-            background: linear-gradient(rgba(0, 47, 108, 0.5), rgba(0, 47, 108, 0.3)), url('https://images.unsplash.com/photo-1682687220742-aba13b6e50ba?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1518837695005-2083093ee35b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
             background-size: cover;
             background-position: center;
-            height: 85vh;
+            height: 80vh;
             display: flex;
             align-items: center;
             text-align: center;
@@ -122,52 +118,49 @@
         }
 
         .hero h1 {
-            font-size: 3.8rem;
+            font-size: 3.5rem;
             margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-            font-weight: 800;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
 
         .hero p {
-            font-size: 1.4rem;
-            margin-bottom: 2.5rem;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
         }
 
         .btn {
             display: inline-block;
-            background-color: var(--coral);
-            color: var(--white);
-            padding: 0.9rem 2.2rem;
+            background-color: var(--accent);
+            color: var(--dark);
+            padding: 0.8rem 2rem;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
             border: none;
             cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .btn:hover {
-            background-color: #e64a19;
+            background-color: var(--primary);
+            color: var(--white);
             transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
         }
 
         section {
-            padding: 6rem 0;
+            padding: 5rem 0;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
         }
 
         .section-title h2 {
             font-size: 2.5rem;
-            color: var(--dark);
+            color: var(--primary);
             margin-bottom: 1rem;
             position: relative;
             display: inline-block;
@@ -176,34 +169,32 @@
         .section-title h2::after {
             content: '';
             position: absolute;
-            bottom: -15px;
+            bottom: -10px;
             left: 50%;
             transform: translateX(-50%);
-            width: 60px;
+            width: 80px;
             height: 4px;
-            background-color: var(--secondary);
+            background-color: var(--accent);
             border-radius: 2px;
         }
 
         .section-title p {
             color: var(--text);
             max-width: 700px;
-            margin: 1.5rem auto 0;
-            font-size: 1.1rem;
+            margin: 0 auto;
         }
 
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            gap: 3rem;
             align-items: center;
         }
 
         .about-img {
-            border-radius: 15px;
+            border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 15px 30px rgba(0, 47, 108, 0.2);
-            position: relative;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
 
         .about-img img {
@@ -218,32 +209,29 @@
         }
 
         .about-text h3 {
-            font-size: 2rem;
+            font-size: 1.8rem;
             margin-bottom: 1.5rem;
-            color: var(--primary);
+            color: var(--dark);
         }
 
         .about-text p {
             margin-bottom: 1.5rem;
-            font-size: 1.1rem;
         }
 
-        /* 统计数据样式 */
         .stats {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 2rem;
-            margin-top: 5rem;
+            margin-top: 3rem;
         }
 
         .stat-item {
             text-align: center;
-            padding: 2.5rem 1.5rem;
+            padding: 2rem 1rem;
             background-color: var(--white);
-            border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0, 172, 193, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s ease;
-            border-bottom: 4px solid var(--secondary);
         }
 
         .stat-item:hover {
@@ -251,178 +239,259 @@
         }
 
         .stat-item i {
-            font-size: 3rem;
-            color: var(--secondary);
-            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
         }
 
         .stat-item h3 {
             font-size: 2.5rem;
             color: var(--dark);
             margin-bottom: 0.5rem;
-            font-weight: 800;
         }
 
         .stat-item p {
-            color: #607d8b;
-            font-weight: 600;
-            text-transform: uppercase;
-            font-size: 0.9rem;
+            color: var(--text);
         }
 
         .initiatives {
             background-color: var(--white);
-            position: relative;
-        }
-        
-        /* 添加波浪装饰 */
-        .initiatives::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: radial-gradient(#e1f5fe 1px, transparent 1px);
-            background-size: 20px 20px;
-            opacity: 0.5;
-            pointer-events: none;
         }
 
         .initiatives-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2.5rem;
-            position: relative;
-            z-index: 2;
+            gap: 2rem;
         }
 
         .initiative-card {
-            background-color: var(--white);
-            border-radius: 15px;
+            background-color: var(--light);
+            border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
         }
 
         .initiative-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 172, 193, 0.2);
         }
 
         .initiative-img {
-            height: 220px;
+            height: 200px;
             overflow: hidden;
-            position: relative;
         }
 
         .initiative-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.6s ease;
+            transition: transform 0.5s ease;
         }
 
         .initiative-card:hover .initiative-img img {
             transform: scale(1.1);
         }
-        
-        .initiative-card:hover .initiative-img::after {
-            background: rgba(0, 172, 193, 0.2);
-        }
 
         .initiative-content {
-            padding: 2rem;
+            padding: 1.5rem;
         }
 
         .initiative-content h3 {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             margin-bottom: 1rem;
             color: var(--dark);
         }
 
         .initiative-content p {
             margin-bottom: 1.5rem;
-            color: #546e7a;
-            font-size: 0.95rem;
         }
-        
-        .initiative-content .btn {
-            background-color: transparent;
-            color: var(--primary);
-            border: 2px solid var(--primary);
-            padding: 0.5rem 1.5rem;
-            font-size: 0.9rem;
+
+        .threats {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
+            color: var(--white);
         }
-        
-        .initiative-content .btn:hover {
-            background-color: var(--primary);
+
+        .threats .section-title h2 {
+            color: var(--white);
+        }
+
+        .threats .section-title p {
+            color: var(--light);
+        }
+
+        .threats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .threat-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .threat-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .threat-card i {
+            font-size: 3rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
+
+        .threat-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .threat-card p {
+            color: var(--light);
+        }
+
+        .species {
+            background-color: var(--sand);
+        }
+
+        .species-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .species-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .species-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .species-img {
+            height: 180px;
+            overflow: hidden;
+        }
+
+        .species-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .species-card:hover .species-img img {
+            transform: scale(1.1);
+        }
+
+        .species-content {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .species-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .species-content .status {
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .status.endangered {
+            background-color: #ff6b6b;
+            color: var(--white);
+        }
+
+        .status.vulnerable {
+            background-color: #ffd93d;
+            color: var(--dark);
+        }
+
+        .status.threatened {
+            background-color: #ff9f43;
             color: var(--white);
         }
 
         .cta {
-            background: linear-gradient(135deg, var(--dark), var(--primary));
+            background: linear-gradient(to right, var(--primary), var(--secondary));
             color: var(--white);
             text-align: center;
-            padding: 6rem 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta::before {
-            content: '\f773'; /* FontAwesome wave icon */
-            font-family: "Font Awesome 6 Free";
-            font-weight: 900;
-            position: absolute;
-            top: -50px;
-            right: -50px;
-            font-size: 20rem;
-            color: rgba(255, 255, 255, 0.05);
-            transform: rotate(-15deg);
+            padding: 5rem 0;
         }
 
         .cta h2 {
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             margin-bottom: 1.5rem;
-            position: relative;
-            z-index: 2;
         }
 
         .cta p {
             font-size: 1.2rem;
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
-            position: relative;
-            z-index: 2;
-            opacity: 0.9;
         }
 
         .cta .btn {
             background-color: var(--white);
             color: var(--primary);
-            position: relative;
-            z-index: 2;
         }
 
         .cta .btn:hover {
-            background-color: var(--accent);
+            background-color: var(--sand);
             color: var(--dark);
         }
 
+        .wave-divider {
+            height: 100px;
+            background: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .wave-divider::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 200%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%230077b6' fill-opacity='1' d='M0,128L48,138.7C96,149,192,171,288,165.3C384,160,480,128,576,128C672,128,768,160,864,181.3C960,203,1056,213,1152,197.3C1248,181,1344,139,1392,117.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E") repeat-x;
+            background-size: 50% 100%;
+            animation: wave 10s linear infinite;
+        }
+
+        @keyframes wave {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
         footer {
-            background-color: #00254a; /* 很深的海军蓝 */
-            color: #b0bec5;
-            padding: 4rem 0 1rem;
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 3rem 0 1rem;
         }
 
         .footer-content {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 2rem;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
         }
 
         .footer-column h3 {
@@ -430,7 +499,6 @@
             margin-bottom: 1.5rem;
             position: relative;
             padding-bottom: 10px;
-            color: var(--white);
         }
 
         .footer-column h3::after {
@@ -440,12 +508,11 @@
             left: 0;
             width: 40px;
             height: 2px;
-            background-color: var(--secondary);
+            background-color: var(--accent);
         }
 
         .footer-column p {
             margin-bottom: 1rem;
-            font-size: 0.95rem;
         }
 
         .footer-links {
@@ -457,7 +524,7 @@
         }
 
         .footer-links li a {
-            color: #b0bec5;
+            color: var(--light);
             text-decoration: none;
             transition: all 0.3s ease;
         }
@@ -486,31 +553,62 @@
         }
 
         .social-links a:hover {
-            background-color: var(--secondary);
+            background-color: var(--accent);
             transform: translateY(-5px);
+        }
+
+        .newsletter {
+            margin-top: 1rem;
+        }
+
+        .newsletter input {
+            width: 100%;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 0.5rem;
+        }
+
+        .newsletter button {
+            width: 100%;
+            padding: 0.8rem;
+            background-color: var(--accent);
+            color: var(--dark);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter button:hover {
+            background-color: var(--secondary);
+            color: var(--white);
         }
 
         .copyright {
             text-align: center;
             padding-top: 2rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.9rem;
         }
 
         .mobile-menu {
             display: none;
             font-size: 1.5rem;
             cursor: pointer;
-            color: var(--white);
         }
 
-        /* 响应式设计 */
         @media (max-width: 992px) {
             .about-content {
                 grid-template-columns: 1fr;
             }
             
-            .initiatives-grid {
+            .initiatives-grid,
+            .threats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .species-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
             
@@ -538,11 +636,11 @@
                 top: 100%;
                 left: 0;
                 width: 100%;
-                background-color: var(--dark);
+                background-color: var(--primary);
                 flex-direction: column;
                 padding: 1rem 0;
                 text-align: center;
-                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
             }
             
             nav ul.active {
@@ -558,7 +656,12 @@
                 display: block;
             }
             
-            .initiatives-grid {
+            .initiatives-grid,
+            .threats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .species-grid {
                 grid-template-columns: 1fr;
             }
             
@@ -569,203 +672,399 @@
             .stats {
                 grid-template-columns: 1fr;
             }
-            
-            .section-title h2 {
-                font-size: 2rem;
+        }
+
+        .counter {
+            transition: all 0.5s ease;
+        }
+
+        .bubble {
+            position: fixed;
+            border-radius: 50%;
+            background: rgba(72, 202, 228, 0.3);
+            pointer-events: none;
+            animation: rise 8s infinite ease-in;
+            z-index: -1;
+        }
+
+        @keyframes rise {
+            0% {
+                transform: translateY(100vh) scale(0);
+                opacity: 0;
+            }
+            50% {
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateY(-100vh) scale(1);
+                opacity: 0;
             }
         }
     </style>
 </head>
 <body>
-    <!-- 头部导航 -->
+    <!-- Bubbles Animation -->
+    <div id="bubbles"></div>
+
+    <!-- Header -->
     <header>
         <div class="container nav-container">
             <div class="logo">
-                <i class="fas fa-water"></i> <!-- 改为海浪图标 -->
-                <span>Ocean Guardians</span>
+                <i class="fas fa-water"></i>
+                <span>Ocean Guardian</span>
             </div>
             <nav>
                 <div class="mobile-menu">
                     <i class="fas fa-bars"></i>
                 </div>
                 <ul>
-                    <li><a href="#home">首页</a></li>
-                    <li><a href="#about">关于我们</a></li>
-                    <li><a href="#initiatives">保护行动</a></li>
-                    <li><a href="#get-involved">参与进来</a></li>
-                    <li><a href="#contact">联系我们</a></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#threats">Threats</a></li>
+                    <li><a href="#initiatives">Initiatives</a></li>
+                    <li><a href="#species">Species</a></li>
+                    <li><a href="#get-involved">Get Involved</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Hero 区域 -->
+    <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container hero-content">
-            <h1>守护蔚蓝，延续生命</h1>
-            <p>海洋占据了地球70%的表面，却面临着前所未有的威胁。加入我们，共同对抗塑料污染，保护海洋生物多样性。</p>
-            <a href="#get-involved" class="btn">加入守护者联盟</a>
+            <h1>Protect Our Oceans, Preserve Marine Life</h1>
+            <p>Join the global movement to save our seas from pollution, overfishing, and climate change. Together, we can restore the health of our ocean ecosystems.</p>
+            <a href="#get-involved" class="btn"><i class="fas fa-anchor"></i> Dive In</a>
         </div>
     </section>
 
-    <!-- 关于我们 -->
+    <!-- About Section -->
     <section id="about">
         <div class="container">
             <div class="section-title">
-                <h2>关于 Ocean Guardians</h2>
-                <p>我们是一个致力于海洋生态恢复、塑料清理和海洋科普教育的全球非营利组织。</p>
+                <h2>About Ocean Guardian</h2>
+                <p>We are a dedicated alliance of scientists, activists, and ocean lovers committed to protecting marine ecosystems worldwide.</p>
             </div>
             <div class="about-content">
                 <div class="about-img">
-                    <!-- 使用海洋主题图片 -->
-                    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Diver exploring coral reef">
+                    <img src="https://images.unsplash.com/photo-1583212292454-1fe6229603b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80" alt="Ocean conservation team">
                 </div>
                 <div class="about-text">
-                    <h3>我们的使命</h3>
-                    <p>海洋是地球的肺，提供了我们呼吸所需的一半氧气。Ocean Guardians 致力于通过科学研究、社区行动和政策倡导，扭转海洋生态退化的趋势。</p>
-                    <p>自2015年成立以来，我们已动员全球超过10万名志愿者，在50多个国家的海岸线开展行动，专注于清理海洋垃圾和修复受损的珊瑚礁生态系统。</p>
-                    <p>我们要留给下一代的，是一片充满生机、清澈蔚蓝的海洋。</p>
-                    <a href="#" class="btn" style="background-color: var(--primary);">了解更多</a>
+                    <h3>Our Mission</h3>
+                    <p>Ocean Guardian is dedicated to protecting and restoring the world's ocean ecosystems. We work tirelessly to combat plastic pollution, protect endangered marine species, and promote sustainable fishing practices.</p>
+                    <p>Founded in 2012, we've grown from a small coastal cleanup group to an international organization with operations in over 80 countries. Our team of marine biologists, environmental scientists, and passionate volunteers work together to create lasting change.</p>
+                    <p>The ocean covers 71% of our planet and produces over 50% of the world's oxygen. Protecting it isn't just about saving marine life—it's about saving ourselves.</p>
+                    <a href="#" class="btn">Learn More</a>
                 </div>
             </div>
-            
-            <!-- 统计数据 (调整图标和数字) -->
             <div class="stats">
                 <div class="stat-item">
-                    <i class="fas fa-trash-alt"></i> <!-- 垃圾清理图标 -->
-                    <h3 class="counter" data-target="8500">0</h3>
-                    <p>清理垃圾 (吨)</p>
+                    <i class="fas fa-trash-alt"></i>
+                    <h3 class="counter" data-target="5000000">0</h3>
+                    <p>Lbs of Trash Removed</p>
                 </div>
                 <div class="stat-item">
-                    <i class="fas fa-fish"></i> <!-- 鱼类图标 -->
-                    <h3 class="counter" data-target="120">0</h3>
-                    <p>保护珍稀物种</p>
+                    <i class="fas fa-fish"></i>
+                    <h3 class="counter" data-target="75000">0</h3>
+                    <p>Marine Animals Rescued</p>
                 </div>
                 <div class="stat-item">
-                    <i class="fas fa-globe-asia"></i> <!-- 地球图标 -->
-                    <h3 class="counter" data-target="58">0</h3>
-                    <p>覆盖海岸线国家</p>
+                    <i class="fas fa-globe-americas"></i>
+                    <h3 class="counter" data-target="80">0</h3>
+                    <p>Countries Active</p>
                 </div>
                 <div class="stat-item">
-                    <i class="fas fa-hand-holding-heart"></i> <!-- 志愿者图标 -->
-                    <h3 class="counter" data-target="105000">0</h3>
-                    <p>注册志愿者</p>
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <h3 class="counter" data-target="250000">0</h3>
+                    <p>Active Volunteers</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 保护行动 -->
+    <!-- Threats Section -->
+    <section class="threats" id="threats">
+        <div class="container">
+            <div class="section-title">
+                <h2>Threats to Our Oceans</h2>
+                <p>Understanding the challenges facing our marine ecosystems is the first step to protecting them.</p>
+            </div>
+            <div class="threats-grid">
+                <div class="threat-card">
+                    <i class="fas fa-trash"></i>
+                    <h3>Plastic Pollution</h3>
+                    <p>Over 8 million tons of plastic enter our oceans every year, harming marine life and ecosystems. By 2050, there could be more plastic than fish in the sea.</p>
+                </div>
+                <div class="threat-card">
+                    <i class="fas fa-temperature-high"></i>
+                    <h3>Ocean Warming</h3>
+                    <p>Rising ocean temperatures cause coral bleaching, alter migration patterns, and threaten countless species. The ocean has absorbed 90% of global warming's heat.</p>
+                </div>
+                <div class="threat-card">
+                    <i class="fas fa-fish"></i>
+                    <h3>Overfishing</h3>
+                    <p>Over 30% of fish stocks are overfished, disrupting food chains and threatening the livelihoods of billions of people who depend on the ocean for food.</p>
+                </div>
+                <div class="threat-card">
+                    <i class="fas fa-flask"></i>
+                    <h3>Ocean Acidification</h3>
+                    <p>The ocean absorbs about 30% of CO2 emissions, making it more acidic. This threatens shellfish, coral reefs, and the entire marine food web.</p>
+                </div>
+                <div class="threat-card">
+                    <i class="fas fa-oil-can"></i>
+                    <h3>Oil Spills</h3>
+                    <p>Oil spills devastate marine ecosystems, coating wildlife and contaminating habitats for years. The effects can persist for decades after the initial disaster.</p>
+                </div>
+                <div class="threat-card">
+                    <i class="fas fa-building"></i>
+                    <h3>Coastal Development</h3>
+                    <p>Destruction of coastal habitats like mangroves and wetlands removes crucial nurseries for fish and natural barriers against storms and erosion.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Initiatives Section -->
     <section class="initiatives" id="initiatives">
         <div class="container">
             <div class="section-title">
-                <h2>核心保护项目</h2>
-                <p>探索我们需要您支持的关键项目，让改变从现在开始。</p>
+                <h2>Our Initiatives</h2>
+                <p>Discover the key programs and projects we're implementing to protect our ocean ecosystems.</p>
             </div>
             <div class="initiatives-grid">
-                <!-- 项目 1: 珊瑚礁修复 -->
                 <div class="initiative-card">
                     <div class="initiative-img">
-                        <img src="https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1917&q=80" alt="Coral Reef">
+                        <img src="https://images.unsplash.com/photo-1618477461853-cf6ed80faba5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Beach Cleanup">
                     </div>
                     <div class="initiative-content">
-                        <h3>珊瑚礁修复工程</h3>
-                        <p>种植耐热珊瑚，修复受白化影响的生态系统，为海洋生物重建家园。</p>
-                        <a href="#" class="btn">项目详情</a>
+                        <h3>Ocean Cleanup Initiative</h3>
+                        <p>Organizing global beach cleanups and deploying innovative technologies to remove plastic and debris from our oceans and coastlines.</p>
+                        <a href="#" class="btn">Learn More</a>
                     </div>
                 </div>
-                <!-- 项目 2: 塑料清理 -->
                 <div class="initiative-card">
                     <div class="initiative-img">
-                        <img src="https://images.unsplash.com/photo-1618477461853-5f8dd68aa61f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Plastic Pollution Cleanup">
+                        <img src="https://images.unsplash.com/photo-1546026423-cc4642628d2b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80" alt="Coral Restoration">
                     </div>
                     <div class="initiative-content">
-                        <h3>零塑海洋行动</h3>
-                        <p>组织海岸清洁活动，并推广减少一次性塑料使用的生活方式和政策。</p>
-                        <a href="#" class="btn">项目详情</a>
+                        <h3>Coral Reef Restoration</h3>
+                        <p>Planting heat-resistant corals and protecting existing reefs to restore these vital underwater ecosystems that support 25% of marine life.</p>
+                        <a href="#" class="btn">Learn More</a>
                     </div>
                 </div>
-                <!-- 项目 3: 海龟保护 -->
                 <div class="initiative-card">
                     <div class="initiative-img">
-                        <img src="https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Sea Turtle">
+                        <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Marine Protected Areas">
                     </div>
                     <div class="initiative-content">
-                        <h3>濒危物种保育</h3>
-                        <p>保护海龟产卵地，救助受伤海洋动物，打击非法捕捞行为。</p>
-                        <a href="#" class="btn">项目详情</a>
+                        <h3>Marine Protected Areas</h3>
+                        <p>Advocating for and establishing marine protected areas to allow ecosystems to recover and thrive without human interference.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+                <div class="initiative-card">
+                    <div class="initiative-img">
+                        <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Sustainable Fishing">
+                    </div>
+                    <div class="initiative-content">
+                        <h3>Sustainable Fishing</h3>
+                        <p>Working with fishing communities to implement sustainable practices that protect fish populations while supporting livelihoods.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+                <div class="initiative-card">
+                    <div class="initiative-img">
+                        <img src="https://images.unsplash.com/photo-1596436889106-be35e843f974?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Ocean Education">
+                    </div>
+                    <div class="initiative-content">
+                        <h3>Ocean Education</h3>
+                        <p>Teaching the next generation about marine conservation through school programs, workshops, and interactive experiences.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+                <div class="initiative-card">
+                    <div class="initiative-img">
+                        <img src="https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2080&q=80" alt="Wildlife Rescue">
+                    </div>
+                    <div class="initiative-content">
+                        <h3>Marine Wildlife Rescue</h3>
+                        <p>Rescuing and rehabilitating injured sea turtles, dolphins, seals, and other marine animals affected by pollution and human activities.</p>
+                        <a href="#" class="btn">Learn More</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA 行动号召 -->
-    <section class="cta" id="get-involved">
+    <!-- Species Section -->
+    <section class="species" id="species">
         <div class="container">
-            <h2>每一次呼吸都来自海洋</h2>
-            <p>不要等到最后一滴水被污染。无论你是捐赠、志愿者还是仅仅传播消息，你的每一个微小行动都在拯救大海。</p>
-            <a href="#" class="btn">成为志愿者</a>
+            <div class="section-title">
+                <h2>Species We Protect</h2>
+                <p>These incredible marine creatures need our help to survive. Learn about the species at the heart of our conservation efforts.</p>
+            </div>
+            <div class="species-grid">
+                <div class="species-card">
+                    <div class="species-img">
+                        <img src="https://images.unsplash.com/photo-1591025207163-942350e47db2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" alt="Sea Turtle">
+                    </div>
+                    <div class="species-content">
+                        <h3>Sea Turtles</h3>
+                        <span class="status endangered">Endangered</span>
+                        <p>6 of 7 species are threatened</p>
+                    </div>
+                </div>
+                <div class="species-card">
+                    <div class="species-img">
+                        <img src="https://images.unsplash.com/photo-1568430462989-44163eb1752f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80" alt="Whale">
+                    </div>
+                    <div class="species-content">
+                        <h3>Blue Whales</h3>
+                        <span class="status endangered">Endangered</span>
+                        <p>Only 10,000-25,000 remain</p>
+                    </div>
+                </div>
+                <div class="species-card">
+                    <div class="species-img">
+                        <img src="https://images.unsplash.com/photo-1560275619-4662e36fa65c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Shark">
+                    </div>
+                    <div class="species-content">
+                        <h3>Great White Sharks</h3>
+                        <span class="status vulnerable">Vulnerable</span>
+                        <p>Population declining rapidly</p>
+                    </div>
+                </div>
+                <div class="species-card">
+                    <div class="species-img">
+                        <img src="https://images.unsplash.com/photo-1607153333879-c174d265f1d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" alt="Coral">
+                    </div>
+                    <div class="species-content">
+                        <h3>Coral Reefs</h3>
+                        <span class="status threatened">Threatened</span>
+                        <p>50% lost in 30 years</p>
+                    </div>
+                </div>
+                <div class="species-card">
+                    <div class="species-img">
+                        <img src="https://images.unsplash.com/photo-1571752726703-5e7d1f6a986d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" alt="Dolphin">
+                    </div>
+                    <div class="species-content">
+                        <h3>Dolphins</h3>
+                        <span class="status vulnerable">Vulnerable</span>
+                        <p>Many species at risk</p>
+                    </div>
+                </div>
+                <div class="species-card">
+                    <div class="species-img">
+                        <img src="https://images.unsplash.com/photo-1682687220742-aba13b6e50ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Seahorse">
+                    </div>
+                    <div class="species-content">
+                        <h3>Seahorses</h3>
+                        <span class="status vulnerable">Vulnerable</span>
+                        <p>Threatened by habitat loss</p>
+                    </div>
+                </div>
+                <div class="species-card">
+                    <div class="species-img">
+                        <img src="https://images.unsplash.com/photo-1545671913-b89ac1b4ac10?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Seal">
+                    </div>
+                    <div class="species-content">
+                        <h3>Seals</h3>
+                        <span class="status threatened">Threatened</span>
+                        <p>Climate change impacts</p>
+                    </div>
+                </div>
+                <div class="species-card">
+                    <div class="species-img">
+                        <img src="https://images.unsplash.com/photo-1682686580186-b55d2a91053c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Manta Ray">
+                    </div>
+                    <div class="species-content">
+                        <h3>Manta Rays</h3>
+                        <span class="status vulnerable">Vulnerable</span>
+                        <p>Overfishing threat</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- 页脚 -->
+    <!-- CTA Section -->
+    <section class="cta" id="get-involved">
+        <div class="container">
+            <h2>Join the Wave of Change</h2>
+            <p>Together, we can turn the tide on ocean destruction. Every action matters—whether you donate, volunteer, or simply spread awareness. The ocean needs you now more than ever.</p>
+            <a href="#" class="btn"><i class="fas fa-hand-holding-water"></i> Become a Guardian</a>
+        </div>
+    </section>
+
+    <!-- Wave Divider -->
+    <div class="wave-divider"></div>
+
+    <!-- Footer -->
     <footer id="contact">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>Ocean Guardians</h3>
-                    <p>守护海洋就是守护人类的未来。让我们携手共创一个清洁、健康、可持续的蓝色星球。</p>
+                    <h3>Ocean Guardian</h3>
+                    <p>We are dedicated to protecting our ocean ecosystems through research, advocacy, and direct action. Together, we can save our seas.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
                     </div>
                 </div>
                 <div class="footer-column">
-                    <h3>快速导航</h3>
+                    <h3>Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="#home">首页</a></li>
-                        <li><a href="#about">关于我们</a></li>
-                        <li><a href="#initiatives">核心项目</a></li>
-                        <li><a href="#get-involved">志愿者招募</a></li>
-                        <li><a href="#contact">联系方式</a></li>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#threats">Ocean Threats</a></li>
+                        <li><a href="#initiatives">Our Initiatives</a></li>
+                        <li><a href="#species">Protected Species</a></li>
+                        <li><a href="#get-involved">Get Involved</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>重点领域</h3>
+                    <h3>Our Programs</h3>
                     <ul class="footer-links">
-                        <li><a href="#">海洋微塑料治理</a></li>
-                        <li><a href="#">可持续渔业</a></li>
-                        <li><a href="#">红树林保护</a></li>
-                        <li><a href="#">海洋科普教育</a></li>
-                        <li><a href="#">气候变化研究</a></li>
+                        <li><a href="#">Ocean Cleanup</a></li>
+                        <li><a href="#">Coral Restoration</a></li>
+                        <li><a href="#">Wildlife Rescue</a></li>
+                        <li><a href="#">Marine Education</a></li>
+                        <li><a href="#">Sustainable Fishing</a></li>
+                        <li><a href="#">Research & Advocacy</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>联系我们</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> 上海市浦东新区海洋路88号</p>
-                    <p><i class="fas fa-phone"></i> +86 021-12345678</p>
-                    <p><i class="fas fa-envelope"></i> hello@oceanguardians.org</p>
+                    <h3>Stay Updated</h3>
+                    <p>Subscribe to our newsletter for ocean news, events, and ways to help.</p>
+                    <div class="newsletter">
+                        <input type="email" placeholder="Enter your email">
+                        <button type="submit"><i class="fas fa-paper-plane"></i> Subscribe</button>
+                    </div>
+                    <p style="margin-top: 1rem;"><i class="fas fa-map-marker-alt"></i> 123 Ocean Drive, Miami, FL</p>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> info@oceanguardian.org</p>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2025 Ocean Guardians. All rights reserved. 守护蔚蓝行动.</p>
+                <p>&copy; 2025 Ocean Guardian. All rights reserved. | <a href="#" style="color: var(--accent);">Privacy Policy</a> | <a href="#" style="color: var(--accent);">Terms of Service</a></p>
             </div>
         </div>
     </footer>
 
     <script>
-        // 移动端菜单切换
+        // Mobile Menu Toggle
         document.querySelector('.mobile-menu').addEventListener('click', function() {
             document.querySelector('nav ul').classList.toggle('active');
         });
 
-        // 数字增长动画
+        // Counter Animation
         function animateCounters() {
             const counters = document.querySelectorAll('.counter');
-            const speed = 200; // 数值越大越慢
+            const speed = 200;
             
             counters.forEach(counter => {
                 const target = +counter.getAttribute('data-target');
@@ -775,18 +1074,27 @@
                 
                 if(count < target) {
                     counter.innerText = Math.ceil(count + inc);
-                    setTimeout(animateCounters, 20);
+                    setTimeout(animateCounters, 1);
                 } else {
-                    counter.innerText = target;
+                    counter.innerText = target.toLocaleString();
                 }
             });
         }
 
-        // 页面加载或滚动到可视区域时触发动画
-        // 简单起见，这里设置为页面加载后触发
-        window.addEventListener('load', animateCounters);
+        // Intersection Observer for counter animation
+        const aboutSection = document.querySelector('#about');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
 
-        // 平滑滚动
+        observer.observe(aboutSection);
+
+        // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -797,15 +1105,31 @@
                 const targetElement = document.querySelector(targetId);
                 if(targetElement) {
                     window.scrollTo({
-                        top: targetElement.offsetTop - 70,
+                        top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
                     });
                     
-                    // 点击后关闭移动端菜单
                     document.querySelector('nav ul').classList.remove('active');
                 }
             });
         });
+
+        // Create bubbles animation
+        function createBubbles() {
+            const container = document.getElementById('bubbles');
+            for (let i = 0; i < 20; i++) {
+                const bubble = document.createElement('div');
+                bubble.className = 'bubble';
+                bubble.style.left = Math.random() * 100 + 'vw';
+                bubble.style.width = Math.random() * 30 + 10 + 'px';
+                bubble.style.height = bubble.style.width;
+                bubble.style.animationDelay = Math.random() * 8 + 's';
+                bubble.style.animationDuration = Math.random() * 4 + 6 + 's';
+                container.appendChild(bubble);
+            }
+        }
+
+        window.addEventListener('load', createBubbles);
     </script>
 </body>
 </html>
